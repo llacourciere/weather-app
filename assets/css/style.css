@@ -1,0 +1,10 @@
+header {
+    text-align: center;
+    background-color: rgb(69, 38, 183);
+    color: aliceblue;
+    padding: 5px;
+}
+
+.card {
+    padding: 5px;
+}
