@@ -5,10 +5,19 @@ header {
     padding: 5px;
 }
 
-.card {
-  padding-left: 40px;
-  flex-direction: column;
+.search-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
 }
+.btn {
+    justify-content: center;
+}
+.card {
+    border: 5px, solid, blue;
+}
+
 .search {
     padding: 10px;
     align-items: center;
@@ -27,6 +36,7 @@ header {
     border: 1px;
     padding:10px;
 }
-.degrees {
+.units {
     padding: 2px;
+    size: 15px
 }

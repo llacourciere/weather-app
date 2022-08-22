@@ -7,6 +7,7 @@ const currentCity = document.querySelector('.current-city')
 let tempEl = document.querySelector(".temp")
 let humidityEl = document.querySelector(".humidity")
 let windEl = document.querySelector(".wind")
+let iconEl = document.querySelector('.icon')
 let citySearch = document.querySelector("#city-search")
 
 const API_Key = 'f59572c0b2843a8abecdaa750c6e1f93'
