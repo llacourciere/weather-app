@@ -27,9 +27,22 @@
             </form>
         </div>
 
-        <div class="col-12 d-flex justify-content-center">
-            <h2 class="current">Current Weather:<span id="city-search"></span></h2>
-            <div id="curweather-container" class="list-group"></div>
+        <div class="card col-12 col-md-8 d-flex justify-content-center">
+            <h2 class="current">Current Weather:<span class="current-city"></span></h2>
+            <div id="curweather-container" class="current-weather">
+                <div class="temp-content row">
+                    <span class="current-title">Tempurature:</span>
+                    <h2 class="temp"></h2><span class="degrees">Degrees</span>
+                </div>
+                <div class="humidity-content row">
+                    <span class="current-title">Humidity:</span>
+                    <h4 class="humidity"></h4>
+                </div>
+                <div class="wind-content row">
+                    <span class="current-title">Wind:</span>
+                    <h4 class="wind"></h4>
+                </div>
+            </div>
         </div>
 
     </main>

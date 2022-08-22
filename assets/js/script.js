@@ -1,11 +1,15 @@
-var cityFormEl = document.querySelector("#search-form")
-var cityInputEl = document.querySelector("#city-name")
+const cityFormEl = document.querySelector("#search-form")
+const cityInputEl = document.querySelector("#city-name")
 
-var currentWeatherEl = document.querySelector("#curweather-container")
-var citySearch = document.querySelector("#city-search")
+const currentWeatherEl = document.querySelector("#curweather-container")
+let tempEl = document.querySelector(".temp")
+let humidityEl = document.querySelector(".humidity")
+let windEl = document.querySelector(".wind")
+
+let citySearch = document.querySelector("#city-search")
 const API_Key = 'f59572c0b2843a8abecdaa750c6e1f93'
 
-var searchCityForm = (event, city) => {
+const searchCityForm = (event) => {
     event.preventDefault();
     var cityName = cityInputEl.value.trim();
 
@@ -17,30 +21,36 @@ var searchCityForm = (event, city) => {
 
             let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${API_Key}`;
 
-            fetch(url).then(data => data.json()).then(data => {
+            fetch(url).then(response => {
+                return response.json();})
+                .then(data => {
                 console.log(data);
-                var weather = data[0]
-                var cWeatherEl = document.createElement('h3')
-                cWeatherEl.textContent = weather.name;
+                const {temperature, humidty} = data.main;
+                // set DOM elements from API
+                tempEl.textContent = data.main.temp
+                humidityEl.textContent = data.main.humidity
+                windEl.textContent = data.wind.speed
 
-                var weatherEl = document.createElement('p');
-                weatherEl.textContent = weather.weather;
-
-                currentWeatherEl.appendChild(weather);
-
-                currentWeatherEl.appendChild(cWeatherEl);
-            })
+            });
         });
     } else {
         alert("Please enter a City Name")
     }
 };
 
-var displayCurrentWeather = function (data) {
+// var addCurrentWeatherEl = function (data) {
+// var weather = data[0]
+//                 var cWeatherEl = document.createElement('h3')
+//                 cWeatherEl.textContent = weather.main.temp;
 
-}
+//                 currentWeatherEl.appendChild(cWeatherEl);
 
+//                 var weatherEl = document.createElement('li');
+//                 weatherEl.textContent = weather.weather;
 
+//                 currentWeatherEl.appendChild(weatherEl);
+
+//}
 
 
 
