@@ -15,32 +15,36 @@
         <h1 class="title">Weather Dashboard</h1>
     </header>
 
-    <main>
+    <main class="row">
         <div class="card col-12 col-md-4 d-flex justify-content-center">
-            <h3 class="search d-flex flex-direction">
+            <h3 class="search">
                 Search for a City:
             </h3>
-            <form id="search-form">
+            <form id="search-form" class="form">
                 <label for="city">City</label>
-                <input type="text" name="city" id="city-name" class="form-input">
-                <button class="btn btn-primary" type="submit">Search</button>
+                <input type="text" name="city" id="city-name" class="form-input m-2">
+                <button class="btn btn-primary m-4" type="submit">Search</button>
             </form>
         </div>
 
-        <div class="card col-12 col-md-8 d-flex justify-content-center">
-            <h2 class="current">Current Weather:<span class="current-city"></span></h2>
-            <div id="curweather-container" class="current-weather">
-                <div class="temp-content row">
+        <div class="card col-12 col-md-8 ">
+            <div id="curweather-container" class="current-weather justify-content-center">
+                <div class="location">
+                <h2 class="current">Currently:<span class="current-city m-1"></span></h2>
+                <h2 class="date"></h2>
+            </div>
+
+                <div class="content row m-4">
                     <span class="current-title">Tempurature:</span>
-                    <h2 class="temp"></h2><span class="degrees">Degrees</span>
+                    <h4 class="temp m-1"></h4><span class="degrees m-1">F</span>
                 </div>
-                <div class="humidity-content row">
+                <div class="content row m-4">
                     <span class="current-title">Humidity:</span>
-                    <h4 class="humidity"></h4>
+                    <h4 class="humidity m-1"></h4>
                 </div>
-                <div class="wind-content row">
+                <div class="content row m-4">
                     <span class="current-title">Wind:</span>
-                    <h4 class="wind"></h4>
+                    <h4 class="wind m-1"></h4>
                 </div>
             </div>
         </div>

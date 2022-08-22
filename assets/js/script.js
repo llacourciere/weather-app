@@ -2,11 +2,13 @@ const cityFormEl = document.querySelector("#search-form")
 const cityInputEl = document.querySelector("#city-name")
 
 const currentWeatherEl = document.querySelector("#curweather-container")
+const currentCity = document.querySelector('.current-city')
+
 let tempEl = document.querySelector(".temp")
 let humidityEl = document.querySelector(".humidity")
 let windEl = document.querySelector(".wind")
-
 let citySearch = document.querySelector("#city-search")
+
 const API_Key = 'f59572c0b2843a8abecdaa750c6e1f93'
 
 const searchCityForm = (event) => {
@@ -24,13 +26,7 @@ const searchCityForm = (event) => {
             fetch(url).then(response => {
                 return response.json();})
                 .then(data => {
-                console.log(data);
-                const {temperature, humidty} = data.main;
-                // set DOM elements from API
-                tempEl.textContent = data.main.temp
-                humidityEl.textContent = data.main.humidity
-                windEl.textContent = data.wind.speed
-
+                displayCurrentWeather(data);
             });
         });
     } else {
@@ -38,31 +34,19 @@ const searchCityForm = (event) => {
     }
 };
 
-// var addCurrentWeatherEl = function (data) {
-// var weather = data[0]
-//                 var cWeatherEl = document.createElement('h3')
-//                 cWeatherEl.textContent = weather.main.temp;
-
-//                 currentWeatherEl.appendChild(cWeatherEl);
-
-//                 var weatherEl = document.createElement('li');
-//                 weatherEl.textContent = weather.weather;
-
-//                 currentWeatherEl.appendChild(weatherEl);
-
-//}
-
-
-
-
-
-
-
+let displayCurrentWeather = (data) => {
+    const {temp, humidity} = data.main;
+    // set DOM elements from API
+    currentCity.textContent = data.name
+    tempEl.textContent = temp
+    humidityEl.textContent = humidity
+    windEl.textContent = data.wind.speed
+}
 
 
 
 //save to localStorage
-var saveCity = function () {
+let saveCity = () => {
     localStorage.setItem('city', JSON.stringify(cities));
 };
 

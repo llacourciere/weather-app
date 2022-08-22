@@ -1,13 +1,32 @@
 header {
     text-align: center;
-    background-color: rgb(69, 38, 183);
+    background: linear-gradient(rgb(138, 43, 186), rgb(148, 11, 163));
     color: aliceblue;
     padding: 5px;
 }
 
 .card {
-    padding: 5px;
+  padding-left: 40px;
+  flex-direction: column;
+}
+.search {
+    padding: 10px;
+    align-items: center;
+    size: 30px
+}
+.form {
+    align-items: center;
+}
+.btn {
+    margin-left: 6px;
+}
+.content {
+    align-items: center;
+}
+.title {
+    border: 1px;
+    padding:10px;
 }
 .degrees {
-    padding: 2p
+    padding: 2px;
 }
