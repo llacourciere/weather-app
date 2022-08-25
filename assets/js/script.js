@@ -14,7 +14,7 @@ let tempForeEl = document.querySelector(".temp-forecast")
 let humidityForeEl = document.querySelector(".humidity-forecast")
 let windForeEl = document.querySelector(".wind-forecast")
 
-const forecastEl = document.querySelector('.forecast')
+const forecastEl = document.querySelector('.date-i')
 
 const API_Key = 'f59572c0b2843a8abecdaa750c6e1f93'
 
@@ -69,6 +69,8 @@ let displayFutureWeather = (data) => {
 
     for (let i = 7; i < data.list.length; i=i+7) {
         const {temp, humidity} = data.list[i].main;
+
+        forecastEl.textContent = `(${new Date(data.list[i].dt*1000).toDateString()})`;
        tempForeEl.textContent = temp;
        humidityForeEl.textContent = humidity;
        windForeEl.textContent = data.list[i].wind.speed;
